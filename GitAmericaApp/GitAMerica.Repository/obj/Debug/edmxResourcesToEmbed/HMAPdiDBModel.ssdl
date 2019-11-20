@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HMA_PDIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="VersionDetails">
+    <Key>
+      <PropertyRef Name="VersionDetailsId" />
+    </Key>
+    <Property Name="VersionDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VersionTypeId" Type="int" />
+    <Property Name="Version" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VersionType">
+    <Key>
+      <PropertyRef Name="VersionTypeId" />
+    </Key>
+    <Property Name="VersionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VersionTypeCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="VersionTypeName" Type="nvarchar" MaxLength="150" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastUpdated" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_VersionType_VersionDetails">
+    <End Role="VersionType" Type="Self.VersionType" Multiplicity="0..1" />
+    <End Role="VersionDetails" Type="Self.VersionDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionType">
+        <PropertyRef Name="VersionTypeId" />
+      </Principal>
+      <Dependent Role="VersionDetails">
+        <PropertyRef Name="VersionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HMA_PDIModelStoreContainer">
+    <EntitySet Name="VersionDetails" EntityType="Self.VersionDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VersionType" EntityType="Self.VersionType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_VersionType_VersionDetails" Association="Self.FK_VersionType_VersionDetails">
+      <End Role="VersionType" EntitySet="VersionType" />
+      <End Role="VersionDetails" EntitySet="VersionDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,18 @@
+{
+  "FilePath": "/Users/warezio/Documents/Git/Azure/GITAmerica/HR-Nalini/GitAmericaApp/GitAmericaApp/GitAmericaApp.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": []
+}

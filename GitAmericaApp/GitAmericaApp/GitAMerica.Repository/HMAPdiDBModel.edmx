@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HMA_PDIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="VersionDetails">
+          <Key>
+            <PropertyRef Name="VersionDetailsId" />
+          </Key>
+          <Property Name="VersionDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VersionTypeId" Type="int" />
+          <Property Name="Version" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VersionType">
+          <Key>
+            <PropertyRef Name="VersionTypeId" />
+          </Key>
+          <Property Name="VersionTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VersionTypeCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="VersionTypeName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdated" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_VersionType_VersionDetails">
+          <End Role="VersionType" Type="Self.VersionType" Multiplicity="0..1" />
+          <End Role="VersionDetails" Type="Self.VersionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VersionType">
+              <PropertyRef Name="VersionTypeId" />
+            </Principal>
+            <Dependent Role="VersionDetails">
+              <PropertyRef Name="VersionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HMA_PDIModelStoreContainer">
+          <EntitySet Name="VersionDetails" EntityType="Self.VersionDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VersionType" EntityType="Self.VersionType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_VersionType_VersionDetails" Association="Self.FK_VersionType_VersionDetails">
+            <End Role="VersionType" EntitySet="VersionType" />
+            <End Role="VersionDetails" EntitySet="VersionDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HMA_PDIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="VersionDetail">
+          <Key>
+            <PropertyRef Name="VersionDetailsId" />
+          </Key>
+          <Property Name="VersionDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VersionTypeId" Type="Int32" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="VersionType" Relationship="Self.FK_VersionType_VersionDetails" FromRole="VersionDetails" ToRole="VersionType" />
+        </EntityType>
+        <EntityType Name="VersionType">
+          <Key>
+            <PropertyRef Name="VersionTypeId" />
+          </Key>
+          <Property Name="VersionTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VersionTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VersionTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="VersionDetails" Relationship="Self.FK_VersionType_VersionDetails" FromRole="VersionType" ToRole="VersionDetails" />
+        </EntityType>
+        <Association Name="FK_VersionType_VersionDetails">
+          <End Role="VersionType" Type="Self.VersionType" Multiplicity="0..1" />
+          <End Role="VersionDetails" Type="Self.VersionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VersionType">
+              <PropertyRef Name="VersionTypeId" />
+            </Principal>
+            <Dependent Role="VersionDetails">
+              <PropertyRef Name="VersionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HMA_PDIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VersionDetails" EntityType="Self.VersionDetail" />
+          <EntitySet Name="VersionTypes" EntityType="Self.VersionType" />
+          <AssociationSet Name="FK_VersionType_VersionDetails" Association="Self.FK_VersionType_VersionDetails">
+            <End Role="VersionType" EntitySet="VersionTypes" />
+            <End Role="VersionDetails" EntitySet="VersionDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HMA_PDIModelStoreContainer" CdmEntityContainer="HMA_PDIEntities">
+          <EntitySetMapping Name="VersionDetails">
+            <EntityTypeMapping TypeName="HMA_PDIModel.VersionDetail">
+              <MappingFragment StoreEntitySet="VersionDetails">
+                <ScalarProperty Name="VersionDetailsId" ColumnName="VersionDetailsId" />
+                <ScalarProperty Name="VersionTypeId" ColumnName="VersionTypeId" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VersionTypes">
+            <EntityTypeMapping TypeName="HMA_PDIModel.VersionType">
+              <MappingFragment StoreEntitySet="VersionType">
+                <ScalarProperty Name="VersionTypeId" ColumnName="VersionTypeId" />
+                <ScalarProperty Name="VersionTypeCode" ColumnName="VersionTypeCode" />
+                <ScalarProperty Name="VersionTypeName" ColumnName="VersionTypeName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

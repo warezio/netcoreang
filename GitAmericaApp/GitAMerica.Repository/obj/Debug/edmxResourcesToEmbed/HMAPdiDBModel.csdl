@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HMA_PDIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="VersionDetail">
+    <Key>
+      <PropertyRef Name="VersionDetailsId" />
+    </Key>
+    <Property Name="VersionDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VersionTypeId" Type="Int32" />
+    <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="VersionType" Relationship="Self.FK_VersionType_VersionDetails" FromRole="VersionDetails" ToRole="VersionType" />
+  </EntityType>
+  <EntityType Name="VersionType">
+    <Key>
+      <PropertyRef Name="VersionTypeId" />
+    </Key>
+    <Property Name="VersionTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VersionTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="VersionTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="VersionDetails" Relationship="Self.FK_VersionType_VersionDetails" FromRole="VersionType" ToRole="VersionDetails" />
+  </EntityType>
+  <Association Name="FK_VersionType_VersionDetails">
+    <End Role="VersionType" Type="Self.VersionType" Multiplicity="0..1" />
+    <End Role="VersionDetails" Type="Self.VersionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VersionType">
+        <PropertyRef Name="VersionTypeId" />
+      </Principal>
+      <Dependent Role="VersionDetails">
+        <PropertyRef Name="VersionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HMA_PDIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="VersionDetails" EntityType="Self.VersionDetail" />
+    <EntitySet Name="VersionTypes" EntityType="Self.VersionType" />
+    <AssociationSet Name="FK_VersionType_VersionDetails" Association="Self.FK_VersionType_VersionDetails">
+      <End Role="VersionType" EntitySet="VersionTypes" />
+      <End Role="VersionDetails" EntitySet="VersionDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

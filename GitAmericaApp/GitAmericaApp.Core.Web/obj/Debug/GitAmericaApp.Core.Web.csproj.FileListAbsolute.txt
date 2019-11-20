@@ -1,0 +1,11 @@
+C:\Users\19495\source\repos\GitAmericaApp\GitAmericaApp.Core.Web\bin\Debug\GitAmericaApp.Core.Web.dll
+C:\Users\19495\source\repos\GitAmericaApp\GitAmericaApp.Core.Web\bin\Debug\GitAmericaApp.Core.Web.pdb
+C:\Users\19495\source\repos\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.csprojAssemblyReference.cache
+C:\Users\19495\source\repos\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.csproj.CoreCompileInputs.cache
+C:\Users\19495\source\repos\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.dll
+C:\Users\19495\source\repos\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.pdb
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmericaApp.Core.Web\bin\Debug\GitAmericaApp.Core.Web.dll
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmericaApp.Core.Web\bin\Debug\GitAmericaApp.Core.Web.pdb
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.csprojResolveAssemblyReference.cache
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.dll
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmericaApp.Core.Web\obj\Debug\GitAmericaApp.Core.Web.pdb

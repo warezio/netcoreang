@@ -1,0 +1,11 @@
+C:\Users\19495\source\repos\GitAmericaApp\GitAmerica.Entity\bin\Debug\GitAmerica.Entity.dll
+C:\Users\19495\source\repos\GitAmericaApp\GitAmerica.Entity\bin\Debug\GitAmerica.Entity.pdb
+C:\Users\19495\source\repos\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.csproj.CoreCompileInputs.cache
+C:\Users\19495\source\repos\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.dll
+C:\Users\19495\source\repos\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.pdb
+C:\Users\19495\source\repos\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.csprojAssemblyReference.cache
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmerica.Entity\bin\Debug\GitAmerica.Entity.dll
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmerica.Entity\bin\Debug\GitAmerica.Entity.pdb
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.csprojResolveAssemblyReference.cache
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.dll
+C:\Temp\2019.06.17_nalini\GitAmericaApp\GitAmerica.Entity\obj\Debug\GitAmerica.Entity.pdb

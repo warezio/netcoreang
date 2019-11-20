@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HMA_PDIModelStoreContainer" CdmEntityContainer="HMA_PDIEntities">
+    <EntitySetMapping Name="VersionDetails">
+      <EntityTypeMapping TypeName="HMA_PDIModel.VersionDetail">
+        <MappingFragment StoreEntitySet="VersionDetails">
+          <ScalarProperty Name="VersionDetailsId" ColumnName="VersionDetailsId" />
+          <ScalarProperty Name="VersionTypeId" ColumnName="VersionTypeId" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VersionTypes">
+      <EntityTypeMapping TypeName="HMA_PDIModel.VersionType">
+        <MappingFragment StoreEntitySet="VersionType">
+          <ScalarProperty Name="VersionTypeId" ColumnName="VersionTypeId" />
+          <ScalarProperty Name="VersionTypeCode" ColumnName="VersionTypeCode" />
+          <ScalarProperty Name="VersionTypeName" ColumnName="VersionTypeName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,226 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <div class="main">
+    <tabset  #tabset>
+      <tab (selectTab)="getTableContent('PDI')" id='#PDI' heading="PDI">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+      <tab (selectTab)="getTableContent('BT')" id='#BT' #BT heading="Bluetooth">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+      <tab (selectTab)="getTableContent('DB')" id="#DB" #DB heading="Database">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+      <tab (selectTab)="getTableContent('FW')" id='#FW' heading="PIM F/W">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+      <tab (selectTab)="getTableContent('GDB')" id='#GDB' heading="GDS DataBase">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+      <tab (selectTab)="getTableContent('MM')" id="#MM" #DB heading="Models Master">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+      <tab (selectTab)="getTableContent('VCI_FW')" id="#VCI_FW" #DB heading="VCI F/W">
+        <div class="row">
+          <div class="col-xs-12 col-12">
+            <div class="content-wrapper">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Version Type</th>
+                      <th>Version Name</th>
+                      <th>File Name</th>
+                      <th>memo</th>
+                      <th>Created Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let version of displayedVersions">
+                      <td>{{version.VersionTypeName}}</td>
+                      <td>{{version.Version}}</td>
+                      <td>{{version.FileName}}</td>
+                      <td>{{version.Memo}}</td>
+                      <td>{{version.CreatedDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <pagination [totalItems]="versionData.length" (pageChanged)="pageChanged($event)"></pagination>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+  
+</div>
+
