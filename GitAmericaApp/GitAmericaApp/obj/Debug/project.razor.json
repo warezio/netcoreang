@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/warezio/Documents/Git/Azure/GITAmerica/HR-Nalini/GitAmericaApp/GitAmericaApp/GitAmericaApp.csproj",
+  "FilePath": "/Users/warezio/Documents/Git/GitHub/warezio/netcoreang/GitAmericaApp/GitAmericaApp/GitAmericaApp.csproj",
   "Configuration": {
     "ConfigurationName": "UnsupportedRazor",
     "LanguageVersion": "1.0",
@@ -14,5 +14,6 @@
     "CSharpLanguageVersion": 703
   },
   "RootNamespace": null,
-  "Documents": []
+  "Documents": [],
+  "SerializationFormat": "0.2"
 }
